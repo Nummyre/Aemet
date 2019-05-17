@@ -12,9 +12,9 @@ import AEMET.model.logica.Controlador;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        Provincia p = new Provincia();
-        p.setId(34);
-        p.setNombre("TARRAGONA");
+//        Provincia p = new Provincia();
+//        p.setId(34);
+//        p.setNombre("TARRAGONA");
         
         //Llama los métodos del controlador.
         
