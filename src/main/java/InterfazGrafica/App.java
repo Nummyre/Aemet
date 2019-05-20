@@ -7,6 +7,10 @@ import AEMET.model.logica.Controlador;
 import java.awt.FlowLayout;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -30,13 +34,14 @@ public class App extends javax.swing.JFrame {
 
     public App() {
         initComponents();
+        
         setLayout(new FlowLayout());
       
         panelGrafica.setLayout(new java.awt.BorderLayout());
-      
+        
         cargarCmbProvincia(); //Método para cargar las provincias en el comboBox.
         cargarMagnitudes(); //Método para cargar las magnitudes al comboBox.
-
+   
     }
 
     /**
@@ -136,7 +141,7 @@ public class App extends javax.swing.JFrame {
                             .addComponent(cmbEstacion, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(23, 23, 23))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelSuperiorLayout.createSequentialGroup()
-                        .addContainerGap(33, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnBuscar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(panelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,6 +153,7 @@ public class App extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
+        tabla.setBackground(new java.awt.Color(204, 204, 204));
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -196,7 +202,7 @@ public class App extends javax.swing.JFrame {
                         .addGap(223, 223, 223))
                     .addGroup(panelTablaLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(panelGrafica, javax.swing.GroupLayout.DEFAULT_SIZE, 561, Short.MAX_VALUE)
+                        .addComponent(panelGrafica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
         );
         panelTablaLayout.setVerticalGroup(
@@ -210,7 +216,7 @@ public class App extends javax.swing.JFrame {
                             .addComponent(cmbMagnitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnCrear))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(panelGrafica, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE))
+                        .addComponent(panelGrafica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(srcTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
