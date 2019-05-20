@@ -113,7 +113,7 @@ public class EstMeteorologiaCRUD {
     public static ArrayList<EstMeteorologia> Fecha(Date fecha1, Date fecha2, Estacion e){
                 Session session = SESSION_FACTORY.openSession();
                 Query query = 
-                        session.createQuery("SELECT o FROM EstMeteorologia as o WHERE date(o.estMeteorologiaPK.fechaHora) >= :fecha1 AND  date(o.estMeteorologiaPK.fechaHora) <= :fecha2 AND o.estMeteorologiaPK.iDEstacion = :e")
+                        session.createQuery("SELECT m FROM EstMeteorologia as m WHERE date(m.estMeteorologiaPK.fechaHora) >= :fecha1 AND  date(m.estMeteorologiaPK.fechaHora) <= :fecha2 AND m.estMeteorologiaPK.iDEstacion = :e")
                         .setParameter("fecha1", fecha1)
                         .setParameter("fecha2", fecha2)
                         .setParameter("e", e.getId());

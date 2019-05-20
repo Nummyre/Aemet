@@ -153,7 +153,7 @@ public class App extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        tabla.setBackground(new java.awt.Color(204, 204, 204));
+        tabla.setBackground(new java.awt.Color(255, 255, 255));
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
