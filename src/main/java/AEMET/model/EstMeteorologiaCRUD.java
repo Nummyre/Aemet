@@ -93,6 +93,12 @@ public class EstMeteorologiaCRUD {
         return estMeteorologias;
     }
     
+    /**
+     * Lista la estación por id.
+     * 
+     * @param e
+     * @return 
+     */
     public static ArrayList<EstMeteorologia> datosEstaciones(Estacion e){
         Session session = SESSION_FACTORY.openSession();
          Query query = session.getNamedQuery("EstMeteorologia.findByIDEstacion").setParameter("iDEstacion", e.getId());

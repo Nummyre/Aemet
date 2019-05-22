@@ -34,7 +34,7 @@ public class Test {
             }
         }
 
-        System.out.println("FIN");
+        System.out.println("-----------------FIN---------------------------");
         
     }
 }

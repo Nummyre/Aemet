@@ -108,10 +108,23 @@ public class Controlador {
         return EstMeteorologiaCRUD.datosEstaciones(e);
     }
     
+    /**
+     * Lista todas las estaciones
+     * 
+     * @return 
+     */
     public static ArrayList<Estacion>AllEstattions(){
         return EstacionCRUD.findAll();
     }
     
+    /**
+     * Coge párametro de fechas.
+     * 
+     * @param fecha1
+     * @param fecha2
+     * @param e
+     * @return 
+     */
     public static ArrayList<EstMeteorologia>Fechas(Date fecha1,Date fecha2, Estacion e){
         return EstMeteorologiaCRUD.Fecha(fecha1, fecha2, e);
     }
