@@ -8,6 +8,7 @@ import AEMET.model.logica.Controlador;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
@@ -24,7 +25,7 @@ public class Test {
             try {
                 Controlador.insertEst_Met(estacione.getId());
             } catch (Exception ex) {
-                Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "No hay datos para esa estación.", "Error al insertar estaciones", JOptionPane.ERROR_MESSAGE);
             }finally{
                 try {
                     Thread.sleep(2000);

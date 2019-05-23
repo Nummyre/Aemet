@@ -2,13 +2,11 @@ package vista;
 
 import AEMET.model.entities.EstMeteorologia;
 import java.awt.HeadlessException;
-import org.jfree.data.category.DefaultCategoryDataset;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.time.FixedMillisecond;
 import org.jfree.data.time.Millisecond;
 import org.jfree.data.time.TimeSeries;

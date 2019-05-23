@@ -6,6 +6,7 @@ import AEMET.model.entities.Provincia;
 import AEMET.model.logica.Controlador;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -29,13 +30,12 @@ public class Vista extends javax.swing.JFrame {
 
     public Vista() {
         initComponents();
-     
-      
+
         panelGrafica.setLayout(new java.awt.BorderLayout());
-        
+
         cargarCmbProvincia(); //Método para cargar las provincias en el comboBox.
         cargarMagnitudes(); //Método para cargar las magnitudes al comboBox.
-   
+
     }
 
     /**
@@ -252,7 +252,7 @@ public class Vista extends javax.swing.JFrame {
      * Método de evento del botón de buscar.
      *
      * Añade a la tabla los datos del aemet buscando por las fechas.
-     * 
+     *
      * @param evt
      */
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -263,12 +263,12 @@ public class Vista extends javax.swing.JFrame {
         //Se crea dos objetos de tipo Date que es igual a la fecha que coge un Date. (Los campos de fecha es un JCalendar)
         Date fecha1 = fechaInicio.getDate();
         Date fecha2 = fechaFin.getDate();
-
+        
         datosAEMET = Controlador.Fechas(fecha1, fecha2, e); //El arrayList de datosAemet es igual al método del controlador que pasa una query de busqueda por fechas.
-
-        modelo = (DefaultTableModel) tabla.getModel();
-        modelo.setRowCount(0); //pone 0 la tabla
-        leerDatos(datosAEMET); //Se carga el método de leer los datos del AEMET.
+        
+            modelo = (DefaultTableModel) tabla.getModel();
+            modelo.setRowCount(0); //pone 0 la tabla
+            leerDatos(datosAEMET); //Se carga el método de leer los datos del AEMET.
 
     }//GEN-LAST:event_btnBuscarActionPerformed
 
@@ -325,7 +325,7 @@ public class Vista extends javax.swing.JFrame {
             panelGrafica.add(gI.Insolación());
         }
 
-        panelGrafica.validate(); 
+        panelGrafica.validate();
 
     }//GEN-LAST:event_btnCrearActionPerformed
 
@@ -362,28 +362,29 @@ public class Vista extends javax.swing.JFrame {
             new Vista().setVisible(true);
         });
     }
-   
+
     /**
      * Método para llenar el comboBox de provincias.
-     * 
+     *
      */
     private void cargarCmbProvincia() {
 
         //Se crea un arrayList de provincias que es igual al método del controlador para listar las provincias.
         ArrayList<Provincia> lista = Controlador.listarProvincias();
         cmbProvincia.removeAllItems(); //Se borra lo que haya en el comBox
-        
+
         //for-each para pasar de los datos que hay en listar del controlador a la variable "lista".
         for (Provincia lista1 : lista) {
             cmbProvincia.addItem(lista1); //Se añaden al comboBox las provincias.
         }
 
     }
-/**
- * Método para llenar el comboBox de Estaciones.
- * 
- * @param p 
- */
+
+    /**
+     * Método para llenar el comboBox de Estaciones.
+     *
+     * @param p
+     */
     private void cargarCmbEstaciones(Provincia p) {
         ArrayList<Estacion> lista = Controlador.ListarEstaciones(p);
         cmbEstacion.removeAllItems();
@@ -392,21 +393,23 @@ public class Vista extends javax.swing.JFrame {
         }
 
     }
-/**
- * Método para llenar el comboBox de magnitudes.
- * 
- */
+
+    /**
+     * Método para llenar el comboBox de magnitudes.
+     *
+     */
     public void cargarMagnitudes() {
         cmbMagnitud.removeAllItems();
         for (String magnitud : listaMagnitudes) {
             cmbMagnitud.addItem(magnitud);
         }
     }
-/**
- * Método para leer los datos de EstaMeteorología para la tabla.
- * 
- * @param estMeteorologias 
- */
+
+    /**
+     * Método para leer los datos de EstaMeteorología para la tabla.
+     *
+     * @param estMeteorologias
+     */
     public void leerDatos(ArrayList<EstMeteorologia> estMeteorologias) {
 
         for (EstMeteorologia lista1 : estMeteorologias) {
@@ -415,11 +418,12 @@ public class Vista extends javax.swing.JFrame {
         }
 
     }
-/**
- * Método para cargar los datos de EstaMeteorología para la tabla.
- * 
- * @param estMeteorologia 
- */
+
+    /**
+     * Método para cargar los datos de EstaMeteorología para la tabla.
+     *
+     * @param estMeteorologia
+     */
     public void cargarDatos(EstMeteorologia estMeteorologia) {
 
         datos = new String[modelo.getColumnCount()]; //La variable global Datos coge la cantidad de columnas que hay.
@@ -442,7 +446,7 @@ public class Vista extends javax.swing.JFrame {
         modelo.addRow(datos);
 
     }
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
