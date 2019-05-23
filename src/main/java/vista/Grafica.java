@@ -1,4 +1,4 @@
-package InterfazGrafica;
+package vista;
 
 import AEMET.model.entities.EstMeteorologia;
 import java.awt.HeadlessException;

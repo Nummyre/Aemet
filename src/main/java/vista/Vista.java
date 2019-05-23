@@ -1,20 +1,18 @@
-package InterfazGrafica;
+package vista;
 
 import AEMET.model.entities.EstMeteorologia;
 import AEMET.model.entities.Estacion;
 import AEMET.model.entities.Provincia;
 import AEMET.model.logica.Controlador;
-import java.awt.FlowLayout;
 import java.util.ArrayList;
 import java.util.Date;
-import javax.swing.BoxLayout;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Cintia Ortiz
  */
-public class App extends javax.swing.JFrame {
+public class Vista extends javax.swing.JFrame {
 
     private ArrayList<EstMeteorologia> datosAEMET; //ArrayList de la EstMeteorología.
     private DefaultTableModel modelo;
@@ -29,7 +27,7 @@ public class App extends javax.swing.JFrame {
         "Dirección del viento",
         "Insolación"};
 
-    public App() {
+    public Vista() {
         initComponents();
      
       
@@ -348,19 +346,20 @@ public class App extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(App.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(App.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(App.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(App.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new App().setVisible(true);
+            new Vista().setVisible(true);
         });
     }
    
